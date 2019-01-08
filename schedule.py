@@ -5,7 +5,7 @@ import os
 def main():
     databaseexisted = os.path.isfile('schedule.db')
     dbcon = sqlite3.connect('schedule.db')
-    while databaseexisted and not check_If_Table_Is_Empty():
+    while databaseexisted and not check_if_table_is_empty():
 
 
 
@@ -27,7 +27,7 @@ def main():
 
 
 
-def check_If_Table_Is_Empty():
+def check_if_table_is_empty():
     databaseexisted = os.path.isfile('schedule.db')
     if databaseexisted:
         dbcon = sqlite3.connect('schedule.db')
