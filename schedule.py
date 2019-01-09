@@ -8,12 +8,12 @@ def main():
     while databaseexisted and not check_if_table_is_empty():
         #check if a course which is in a class room is finished
         cursor = dbcon.cursor()
-        cursor.execute("SELECT * FROM classrooms WHERE current_course_id not = 0")
+        cursor.execute("SELECT * FROM classrooms WHERE current_course_id <> 0")
         list_of_all_occupied_tables = cursor.fetchall()
-        for table in list_of_all_occupied_tables
+        for table in list_of_all_occupied_tables:
             table = (table[0],table[1],table[2],table[3]-1)
             if table[3]==0:
-                cursor.execute("DELETE ...")
+                cursor.execute("DELETE FROM courses WHERE id = (?)", table[2])
                 cursor.execute("UPDATE classrooms SET current_course_id = 0 , current_course_time = 0 WHERE classrooms.id = (?)", table[0])
 
 
