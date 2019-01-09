@@ -7,7 +7,7 @@ def main():
     dbcon = sqlite3.connect('schedule.db')
     while databaseexisted and not check_if_table_is_empty():
         cursor = dbcon.cursor()
-        cursor 
+        cursor
 
 
 
