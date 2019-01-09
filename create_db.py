@@ -25,7 +25,7 @@ def main():
                 cursor.execute("INSERT INTO students(grade,count) VALUES(?,?)",(list_Of_Line[1].strip(),list_Of_Line[2].strip()))
 
              if list_Of_Line[0] == 'R':
-                 cursor.execute("INSERT INTO students(id,location,current_course_id,current_course_time_left) VALUES(?,?)", (list_Of_Line[1], list_Of_Line[2]))
+                 cursor.execute("INSERT INTO students(id,location,current_course_id,current_course_time_left) VALUES(?,?,0,0)", (list_Of_Line[1], list_Of_Line[2]))
 
 if __name__ == '__main__':
     main()

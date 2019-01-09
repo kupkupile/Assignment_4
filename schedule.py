@@ -32,8 +32,9 @@ def check_if_table_is_empty():
     if databaseexisted:
         dbcon = sqlite3.connect('schedule.db')
         cursor = dbcon.cursor()
-        coursesList =cursor.execute("SELECT * FROM courses")
-        if len(coursesList)==0:
+        cursor.execute("SELECT * FROM courses")
+        coursesList = cursor.fetchall();
+        if len(coursesList.fetchall())==0:
             return True
         else:
             return False
