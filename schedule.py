@@ -33,7 +33,7 @@ def main():
         list_of_all_classrooms = cursor.fetchall()
         for var in list_of_all_classrooms:
             if var[3] == 0:
-                cursor.execute("SELECT * FROM courses WHERE class_id = (?) ORDER BY id ASC LIMIT 1", (var[0], ))
+                cursor.execute("SELECT * FROM courses WHERE class_id = (?)", (var[0], ))
                 enter_to_classroomTable = cursor.fetchone()
                 if enter_to_classroomTable is not None and len(enter_to_classroomTable) != 0:
                     print("("+str(number_of_iteration)+") " + str(var[1]) + ": " + str(enter_to_classroomTable[1]) + " is schedule to start")
